@@ -1,4 +1,4 @@
-package uz.pdp.dbpractise.lessonTasks;
+package uz.pdp.dbpractise;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

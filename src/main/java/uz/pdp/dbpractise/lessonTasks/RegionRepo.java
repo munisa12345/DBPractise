@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-import static uz.pdp.dbpractise.lessonTasks.MyListener.EMF;
+import static uz.pdp.dbpractise.MyListener.EMF;
 
 public class RegionRepo {
 
