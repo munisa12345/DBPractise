@@ -24,7 +24,7 @@ public class CountryRepo {
                 EntityManager entityManager = EMF.createEntityManager()
         ){
            return entityManager.createQuery("""
-                 select  new uz.pdp.dbpractise.ReportData(c.name, count(r.id))
+                 select  new uz.pdp.dbpractise.lessonTasks.CountryRepo(c.name, count(r.id))
                  from Country c 
                  join Region r on r.country.id = c.id
                  group by c.id
