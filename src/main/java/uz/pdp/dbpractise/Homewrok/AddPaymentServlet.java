@@ -1,4 +1,4 @@
-package uz.pdp.dbpractise.lessonTasks;
+package uz.pdp.dbpractise.Homewrok;
 
 import jakarta.persistence.EntityManager;
 
@@ -11,26 +11,27 @@ import java.io.IOException;
 
 import static uz.pdp.dbpractise.MyListener.EMF;
 
-@WebServlet("/region/add")
-public class AddRegionServlet extends HttpServlet {
+@WebServlet("/payment/add")
+public class AddPaymentServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try (
                 EntityManager entityManager = EMF.createEntityManager()
         ){
-            String name = req.getParameter("name");
-            int countryId = Integer.parseInt(req.getParameter("countryId"));
-            Country country = entityManager.find(Country.class, countryId);
+            int amount = Integer.parseInt(req.getParameter("amount"));
+            int studentId = Integer.parseInt(req.getParameter("studentId"));
+
+
+            Student student = entityManager.find(Student.class, studentId);
             entityManager.getTransaction().begin();
-            Region region = new Region(null, name, country);
-            entityManager.persist(region);
+            Payment payment = new Payment(null, amount, student);
+            entityManager.persist(payment);
             entityManager.getTransaction().commit();
 
-            resp.sendRedirect("/Region.jsp");
-
+            resp.sendRedirect("/Students.jsp?groupId=" + student.getGroups().getId());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }

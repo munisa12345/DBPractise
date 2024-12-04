@@ -18,11 +18,11 @@
     Region region = null;
 
     try {
-        if (id != null && !id.isEmpty()) { // Null yoki bo'sh qiymatni tekshirish
+        if (id != null && !id.isEmpty()) {
             region = RegionRepo.getById(Integer.parseInt(id));
         }
     } catch (Exception e) {
-        // Xatolik yuzaga kelsa, uni logga yozish
+
         e.printStackTrace();
     }
 %>

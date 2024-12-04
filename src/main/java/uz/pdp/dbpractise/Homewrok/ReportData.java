@@ -1,13 +1,15 @@
-package uz.pdp.dbpractise.lessonTasks;
+package uz.pdp.dbpractise.Homewrok;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class ReportData {
-    private String country;
-    private Long regionCount;
+    private String courseName;
+    private Long studentCount;
+    private Integer paymentAmount;
+
+
 }

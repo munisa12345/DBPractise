@@ -17,9 +17,16 @@
 <body>
 
 <h1>Course</h1>
-        <%
-            List<Course> courses = Repositories.getCourses();
-        %>
+<%
+    List<Course> courses = Repositories.getCourses();
+%>
+<a href="Report.jsp">
+            <button class="btn btn-dark">
+                Report
+            </button>
+</a>
+
+
         <table class="table">
             <thead>
             <tr>
@@ -43,11 +50,13 @@
                     </form>
                 </td>
             </tr>
+
             <%
                 }
             %>
             </tbody>
         </table>
+
 
 </body>
 </html>
